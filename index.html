@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PracticalAI – Learn AI Practically</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+  <div class="nav-inner">
+    <a class="brand" href="#hero" aria-label="PracticalAI Home">
+      <span class="brand-mark">P</span>
+      <span class="brand-text">Practical<span>AI</span></span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      ☰
+    </button>
+
+    <div class="nav-group" id="navGroup">
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link" data-i18n="nav_home">Home</a></li>
+        <li><a href="#interactive" class="nav-link" data-i18n="nav_paths">Paths</a></li>
+        <li><a href="#try" class="nav-link" data-i18n="nav_try">Try AI</a></li>
+        <li><a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+        <li><a href="#register" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="chip" id="langToggle" type="button">EN</button>
+        <button class="chip" id="themeToggle" type="button" aria-label="Toggle theme">☀️</button>
+        <button class="nav-btn" id="nav-cta" type="button" data-scroll="#register" data-i18n="nav_cta">Get Started</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-text reveal">
+        <div class="badge" data-i18n="hero_badge">Practical learning • Real projects</div>
+        <h1 data-i18n="hero_title">Learn AI <span class="grad">Practically</span></h1>
+        <p class="muted" data-i18n="hero_sub">
+          Choose a goal, follow a clear path, and build a real project you can show.
+        </p>
+
+        <div class="hero-cta">
+          <button class="primary-btn" id="hero-cta" data-i18n="hero_cta">Start Free</button>
+          <a class="ghost-btn" href="#playground" data-i18n="hero_secondary">Try a mini AI demo</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">+120</div>
+            <div class="stat-label" data-i18n="stat_lessons">Bite-size lessons</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">6</div>
+            <div class="stat-label" data-i18n="stat_paths">Learning paths</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">1–2</div>
+            <div class="stat-label" data-i18n="stat_weeks">Weeks per project</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card reveal">
+        <div class="card">
+          <h3 data-i18n="hero_card_title">What you’ll build</h3>
+
+          <div class="mini-list">
+            <div class="mini-item">
+              <div class="dot"></div>
+              <div>
+                <div class="mini-title" data-i18n="mini1_title">Email Assistant</div>
+                <div class="mini-sub muted" data-i18n="mini1_sub">Write + summarize professionally</div>
+              </div>
+            </div>
+
+            <div class="mini-item">
+              <div class="dot"></div>
+              <div>
+                <div class="mini-title" data-i18n="mini2_title">Data Insights</div>
+                <div class="mini-sub muted" data-i18n="mini2_sub">Turn numbers into decisions</div>
+              </div>
+            </div>
+
+            <div class="mini-item">
+              <div class="dot"></div>
+              <div>
+                <div class="mini-title" data-i18n="mini3_title">Content Engine</div>
+                <div class="mini-sub muted" data-i18n="mini3_sub">Plan + create content faster</div>
+              </div>
+            </div>
+          </div>
+
+          <button class="primary-btn w-full" id="hero-card-cta" data-i18n="hero_card_cta">
+            Build your first project
+          </button>
+
+          <p class="tiny muted" data-i18n="hero_card_note">No prior AI experience needed.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal" data-i18n="features_title">Why PracticalAI?</h2>
+      <p class="section-sub reveal muted" data-i18n="features_sub">
+        Simple steps, clear outcomes, and minimal confusion.
+      </p>
+
+      <div class="feature-grid">
+        <div class="feature reveal">
+          <div class="icon">⚡</div>
+          <h3 data-i18n="f1_title">Fast to start</h3>
+          <p class="muted" data-i18n="f1_sub">Short lessons + guided templates.</p>
+        </div>
+
+        <div class="feature reveal">
+          <div class="icon">🧭</div>
+          <h3 data-i18n="f2_title">Clear path</h3>
+          <p class="muted" data-i18n="f2_sub">You always know the next step.</p>
+        </div>
+
+        <div class="feature reveal">
+          <div class="icon">🧩</div>
+          <h3 data-i18n="f3_title">Real projects</h3>
+          <p class="muted" data-i18n="f3_sub">Build something you can show.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PATH BUILDER -->
+  <section class="section alt" id="interactive">
+    <div class="container">
+      <div class="head-row">
+        <div>
+          <h2 class="section-title reveal" data-i18n="paths_title">Build your learning path</h2>
+          <p class="section-sub reveal muted" data-i18n="paths_sub">
+            Choose your goal, then customize the plan. Price and project update instantly.
+          </p>
+        </div>
+
+        <div class="pill reveal" id="liveSummary">
+          <span class="dot-sm"></span>
+          <span data-i18n="live">Live preview</span>
+        </div>
+      </div>
+
+      <div class="builder-grid">
+        <!-- LEFT: controls -->
+        <div class="panel reveal">
+          <h3 data-i18n="choose_goal">Choose a goal</h3>
+
+          <div class="goals">
+            <button class="goal active" data-goal="work" data-i18n="goal_work">AI for Work</button>
+            <button class="goal" data-goal="data" data-i18n="goal_data">AI for Data</button>
+            <button class="goal" data-goal="content" data-i18n="goal_content">AI for Content</button>
+            <button class="goal" data-goal="career" data-i18n="goal_career">AI for Career</button>
+            <button class="goal" data-goal="sales" data-i18n="goal_sales">AI for Sales</button>
+            <button class="goal" data-goal="study" data-i18n="goal_study">AI for Study</button>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label data-i18n="level">Level</label>
+              <select id="levelSelect">
+                <option value="beginner" data-i18n="lvl_beginner">Beginner</option>
+                <option value="intermediate" data-i18n="lvl_intermediate">Intermediate</option>
+                <option value="advanced" data-i18n="lvl_advanced">Advanced</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label data-i18n="pace">Pace (hours/week)</label>
+              <input id="paceRange" type="range" min="2" max="12" value="6" />
+              <div class="tiny muted"><span id="paceValue">6</span> <span data-i18n="hrs_week">hrs/week</span></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label data-i18n="duration">Duration</label>
+              <select id="weeksSelect">
+                <option value="1">1 <span data-i18n="week">week</span></option>
+                <option value="2" selected>2 <span data-i18n="weeks">weeks</span></option>
+                <option value="4">4 <span data-i18n="weeks">weeks</span></option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label data-i18n="style">Learning style</label>
+              <select id="styleSelect">
+                <option value="templates" data-i18n="style_templates">Templates</option>
+                <option value="hands" data-i18n="style_hands">Hands-on</option>
+                <option value="guided" data-i18n="style_guided">Guided</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="primary-btn w-full" id="buildBtn" data-i18n="build_btn">
+            Build my path
+          </button>
+
+          <p class="tiny muted" data-i18n="builder_note">
+            This is a demo interaction — your selections update the path instantly.
+          </p>
+        </div>
+
+        <!-- RIGHT: result -->
+        <div class="resultCard reveal" id="resultBox">
+          <div class="resultTop">
+            <div>
+              <h3 id="pathTitle">AI for Work</h3>
+              <p class="muted" id="pathDesc">Automate emails, summaries and daily tasks.</p>
+            </div>
+            <div class="price">
+              <div class="priceTag" id="priceTag">$19</div>
+              <div class="tiny muted" data-i18n="per_month">per month</div>
+            </div>
+          </div>
+
+          <div class="line"></div>
+
+          <div class="kpis">
+            <div class="kpi">
+              <div class="kpiLabel" data-i18n="kpi_project">Project</div>
+              <div class="kpiValue" id="pathProject">Smart Email Assistant</div>
+            </div>
+            <div class="kpi">
+              <div class="kpiLabel" data-i18n="kpi_outcome">Outcome</div>
+              <div class="kpiValue" id="pathOutcome">Save 3–5 hours/week</div>
+            </div>
+            <div class="kpi">
+              <div class="kpiLabel" data-i18n="kpi_time">Est. time</div>
+              <div class="kpiValue"><span id="timeValue">6</span> <span data-i18n="hrs_week">hrs/week</span></div>
+            </div>
+          </div>
+
+          <div class="steps">
+            <div class="step"><span class="stepNum">1</span> <span id="s1">Define use-cases</span></div>
+            <div class="step"><span class="stepNum">2</span> <span id="s2">Write prompts & templates</span></div>
+            <div class="step"><span class="stepNum">3</span> <span id="s3">Build your mini system</span></div>
+          </div>
+
+          <div class="ctaRow">
+            <button class="primary-btn" id="ctaBtn">Start Work Path</button>
+            <button class="ghost-btn" id="copyPlanBtn" data-i18n="copy_plan">Copy plan</button>
+          </div>
+
+          <div class="toast" id="toast" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI PLAYGROUND (Interactive demo) -->
+  <section class="section" id="playground">
+    <div class="container">
+      <h2 class="section-title reveal" data-i18n="try_title">Try a mini AI demo</h2>
+      <p class="section-sub reveal muted" data-i18n="try_sub">
+        Pick a use-case, enter a topic, and generate a structured prompt.
+      </p>
+
+      <div class="play-grid">
+        <div class="panel reveal">
+          <div class="field">
+            <label data-i18n="usecase">Use-case</label>
+            <select id="usecaseSelect">
+              <option value="email" data-i18n="uc_email">Professional Email</option>
+              <option value="summary" data-i18n="uc_summary">Summarize Text</option>
+              <option value="plan" data-i18n="uc_plan">Study Plan</option>
+              <option value="linkedin" data-i18n="uc_linkedin">LinkedIn Post</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label data-i18n="topic">Topic</label>
+            <input id="topicInput" type="text" placeholder="e.g., apply for a data analyst role" />
+            <div class="tiny muted" data-i18n="topic_hint">Tip: be specific for better results.</div>
+          </div>
+
+          <button class="primary-btn w-full" id="genBtn" data-i18n="generate">Generate</button>
+        </div>
+
+        <div class="output reveal">
+          <div class="outputTop">
+            <h3 data-i18n="output">Generated prompt</h3>
+            <button class="chip" id="copyPromptBtn" data-i18n="copy">Copy</button>
+          </div>
+          <pre id="promptBox"></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section alt" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal" data-i18n="faq_title">FAQ</h2>
+      <p class="section-sub reveal muted" data-i18n="faq_sub">Quick answers before you start.</p>
+
+      <div class="faq">
+        <button class="faq-item reveal">
+          <span data-i18n="q1">Do I need AI experience?</span>
+          <span class="chev">▾</span>
+        </button>
+        <div class="faq-panel">
+          <p class="muted" data-i18n="a1">No. We start from practical basics and guide you step by step.</p>
+        </div>
+
+        <button class="faq-item reveal">
+          <span data-i18n="q2">Is this for work or study?</span>
+          <span class="chev">▾</span>
+        </button>
+        <div class="faq-panel">
+          <p class="muted" data-i18n="a2">Both. Pick your goal and the plan adapts to your pace and style.</p>
+        </div>
+
+        <button class="faq-item reveal">
+          <span data-i18n="q3">What do I get at the end?</span>
+          <span class="chev">▾</span>
+        </button>
+        <div class="faq-panel">
+          <p class="muted" data-i18n="a3">A real mini-project + reusable prompt templates and a clear workflow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>PracticalAI</h3>
+        <p class="muted" data-i18n="footer_sub">Learn AI practically by building real projects.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#hero" data-i18n="nav_home">Home</a>
+        <a href="#interactive" data-i18n="nav_paths">Paths</a>
+        <a href="#playground" data-i18n="nav_try">Try AI</a>
+        <a href="mailto:hello@practicalai.com" data-i18n="nav_contact">Contact</a>
+      </div>
+
+      <div class="tiny muted copy">
+        <span>© 2026 PracticalAI.</span>
+        <span data-i18n="rights">All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
