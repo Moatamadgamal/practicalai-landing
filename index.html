@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -8,37 +9,35 @@
 </head>
 
 <body>
-
   <!-- NAVBAR -->
   <nav class="navbar">
-  <div class="nav-inner">
-    <a class="brand" href="#hero" aria-label="PracticalAI Home">
-      <span class="brand-mark">P</span>
-      <span class="brand-text">Practical<span>AI</span></span>
-    </a>
+    <div class="nav-inner">
+      <a class="brand" href="#hero" aria-label="PracticalAI Home">
+        <span class="brand-mark">P</span>
+        <span class="brand-text">Practical<span>AI</span></span>
+      </a>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-      ☰
-    </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
 
-    <div class="nav-group" id="navGroup">
-      <ul class="nav-links">
-        <li><a href="#hero" class="nav-link" data-i18n="nav_home">Home</a></li>
-        <li><a href="#interactive" class="nav-link" data-i18n="nav_paths">Paths</a></li>
-        <li><a href="#try" class="nav-link" data-i18n="nav_try">Try AI</a></li>
-        <li><a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
-        <li><a href="#register" class="nav-link" data-i18n="nav_contact">Contact</a></li>
-      </ul>
+      <div class="nav-group" id="navGroup">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="#interactive" class="nav-link" data-i18n="nav_paths">Paths</a></li>
+          <li><a href="#playground" class="nav-link" data-i18n="nav_try">Try AI</a></li>
+          <li><a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+          <li><a href="#register" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+        </ul>
 
-      <div class="nav-actions">
-        <button class="chip" id="langToggle" type="button">EN</button>
-        <button class="chip" id="themeToggle" type="button" aria-label="Toggle theme">☀️</button>
-        <button class="nav-btn" id="nav-cta" type="button" data-scroll="#register" data-i18n="nav_cta">Get Started</button>
+        <div class="nav-actions">
+          <button class="chip" id="langToggle" type="button">EN</button>
+          <button class="chip" id="themeToggle" type="button" aria-label="Toggle theme">☀️</button>
+          <button class="nav-btn" id="nav-cta" type="button" data-i18n="nav_cta">Get Started</button>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
-
+  </nav>
 
   <!-- HERO -->
   <header class="hero" id="hero">
@@ -72,6 +71,15 @@
       </div>
 
       <div class="hero-card reveal">
+        <!-- Floating images layer -->
+        <div class="float-layer" aria-hidden="true">
+          <img class="float-img f1" src="assets/ai-card-1.png" alt="" />
+          <img class="float-img f2" src="assets/ai-card-2.png" alt="" />
+          <img class="float-img f3" src="assets/ai-card-3.png" alt="" />
+          <span class="float-glow g1"></span>
+          <span class="float-glow g2"></span>
+        </div>
+
         <div class="card">
           <h3 data-i18n="hero_card_title">What you’ll build</h3>
 
@@ -104,12 +112,42 @@
           <button class="primary-btn w-full" id="hero-card-cta" data-i18n="hero_card_cta">
             Build your first project
           </button>
-
           <p class="tiny muted" data-i18n="hero_card_note">No prior AI experience needed.</p>
         </div>
       </div>
     </div>
   </header>
+
+  <!-- TRUSTED BY / LOGO MARQUEE -->
+  <section class="logos">
+    <div class="container">
+      <p class="tiny muted logos-title" data-i18n="trusted_title">Trusted by builders using</p>
+
+      <div class="logo-marquee" aria-label="Partner logos">
+        <div class="logo-track">
+          <!-- set 1 -->
+          <div class="logo-pill">ChatGPT</div>
+          <div class="logo-pill">DeepSeek</div>
+          <div class="logo-pill">Microsoft</div>
+          <div class="logo-pill">Google</div>
+          <div class="logo-pill">Hugging Face</div>
+          <div class="logo-pill">OpenAI</div>
+          <div class="logo-pill">Azure</div>
+          <div class="logo-pill">AWS</div>
+
+          <!-- set 2 (duplicate for seamless loop) -->
+          <div class="logo-pill">ChatGPT</div>
+          <div class="logo-pill">DeepSeek</div>
+          <div class="logo-pill">Microsoft</div>
+          <div class="logo-pill">Google</div>
+          <div class="logo-pill">Hugging Face</div>
+          <div class="logo-pill">OpenAI</div>
+          <div class="logo-pill">Azure</div>
+          <div class="logo-pill">AWS</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FEATURES -->
   <section class="section">
@@ -151,7 +189,6 @@
             Choose your goal, then customize the plan. Price and project update instantly.
           </p>
         </div>
-
         <div class="pill reveal" id="liveSummary">
           <span class="dot-sm"></span>
           <span data-i18n="live">Live preview</span>
@@ -209,10 +246,7 @@
             </div>
           </div>
 
-          <button class="primary-btn w-full" id="buildBtn" data-i18n="build_btn">
-            Build my path
-          </button>
-
+          <button class="primary-btn w-full" id="buildBtn" data-i18n="build_btn">Build my path</button>
           <p class="tiny muted" data-i18n="builder_note">
             This is a demo interaction — your selections update the path instantly.
           </p>
@@ -238,10 +272,12 @@
               <div class="kpiLabel" data-i18n="kpi_project">Project</div>
               <div class="kpiValue" id="pathProject">Smart Email Assistant</div>
             </div>
+
             <div class="kpi">
               <div class="kpiLabel" data-i18n="kpi_outcome">Outcome</div>
               <div class="kpiValue" id="pathOutcome">Save 3–5 hours/week</div>
             </div>
+
             <div class="kpi">
               <div class="kpiLabel" data-i18n="kpi_time">Est. time</div>
               <div class="kpiValue"><span id="timeValue">6</span> <span data-i18n="hrs_week">hrs/week</span></div>
@@ -338,6 +374,51 @@
       </div>
     </div>
   </section>
+
+  <!-- REGISTER -->
+  <section class="register" id="register">
+    <div class="container register-grid">
+      <div class="register-info reveal">
+        <h2 data-i18n="reg_title">Start building today</h2>
+        <p class="muted" data-i18n="reg_sub">Leave your email and we’ll send you a quick starter kit + the first mini project.</p>
+
+        <ul class="checklist">
+          <li class="note">✅ <span data-i18n="reg_p1">Beginner-friendly steps</span></li>
+          <li class="note">✅ <span data-i18n="reg_p2">Real project templates</span></li>
+          <li class="note">✅ <span data-i18n="reg_p3">Prompt packs + workflows</span></li>
+        </ul>
+
+        <div class="note">
+          <strong data-i18n="reg_note_title">Tip:</strong>
+          <span class="muted" data-i18n="reg_note">Use a real goal (job, study, content) to get the best plan.</span>
+        </div>
+      </div>
+
+      <form class="register-form reveal" id="regForm">
+        <div class="field">
+          <label data-i18n="reg_name">Name</label>
+          <input id="regName" type="text" placeholder="Your name" />
+        </div>
+        <div class="field">
+          <label data-i18n="reg_email">Email</label>
+          <input id="regEmail" type="email" placeholder="name@email.com" />
+        </div>
+        <div class="field">
+          <label data-i18n="reg_goal">Goal</label>
+          <select id="regGoal">
+            <option value="work" data-i18n="goal_work">AI for Work</option>
+            <option value="data" data-i18n="goal_data">AI for Data</option>
+            <option value="content" data-i18n="goal_content">AI for Content</option>
+            <option value="career" data-i18n="goal_career">AI for Career</option>
+          </select>
+        </div>
+
+        <button class="primary-btn full" type="submit" data-i18n="reg_btn">Send starter kit</button>
+        <div class="form-msg tiny muted" id="regMsg"></div>
+      </form>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="footer" id="footer">
     <div class="container footer-grid">
@@ -350,7 +431,7 @@
         <a href="#hero" data-i18n="nav_home">Home</a>
         <a href="#interactive" data-i18n="nav_paths">Paths</a>
         <a href="#playground" data-i18n="nav_try">Try AI</a>
-        <a href="mailto:hello@practicalai.com" data-i18n="nav_contact">Contact</a>
+        <a href="#register" data-i18n="nav_contact">Contact</a>
       </div>
 
       <div class="tiny muted copy">
@@ -363,4 +444,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
