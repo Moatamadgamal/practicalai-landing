@@ -561,6 +561,31 @@ function toggleMobileMenu(){
   const isOpen = navGroup.classList.toggle("open");
   btn.setAttribute("aria-expanded", String(isOpen));
 }
+// ===================== FEATURES IMAGE SWITCH =====================
+function initFeaturesImageSwitch(){
+  const img = document.getElementById("featuresImg");
+  if(!img) return;
+
+  const images = [
+    "assets/slide1.jpg",
+    "assets/slide2.jpg",
+    "assets/slide3.jpg"
+  ];
+
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+
+    // حركة بسيطة
+    img.style.opacity = "0";
+
+    setTimeout(() => {
+      img.src = images[index];
+      img.style.opacity = "1";
+    }, 300);
+  }, 3000);
+}
 
 // ===================== INIT =====================
 document.addEventListener("DOMContentLoaded", () => {
@@ -588,7 +613,6 @@ document.addEventListener("DOMContentLoaded", () => {
   $("nav-cta").addEventListener("click", () => { closeMobileMenu(); scrollToInteractive(); });
   $("hero-cta").addEventListener("click", scrollToInteractive);
   $("hero-card-cta").addEventListener("click", scrollToInteractive);
-
   // Theme toggle
   $("themeToggle").addEventListener("click", () => {
     const current = document.documentElement.getAttribute("data-theme") || "light";
@@ -660,14 +684,31 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Register (demo)
-  const regForm = $("regForm");
-  regForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = ($("regEmail").value || "").trim();
-    const msg = $("regMsg");
-    const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    msg.textContent = ok ? t("reg_msg_ok") : t("reg_msg_need");
-  });
+  // Register (demo)
+const regForm = $("regForm");
+regForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  document.addEventListener("DOMContentLoaded", () => {
+  // كودك كله زي ما هو
+
+  initFeaturesImageSwitch();
+});
+
+
+  const email = ($("regEmail").value || "").trim();
+  const msg = $("regMsg");
+  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+\.[^\s@]+$/.test(email) || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  msg.textContent = ok ? t("reg_msg_ok") : t("reg_msg_need");
+
+  // ✅ لو الإيميل صحيح: امسح الحقول بعد ثواني بسيطة
+  if (ok) {
+    setTimeout(() => {
+      regForm.reset();          // يمسح name/email/goal
+      msg.textContent = "";     // يمسح الرسالة
+    }, 1200);
+  }
+});
 
   // Reveal
   const observer = new IntersectionObserver((entries) => {
@@ -679,3 +720,30 @@ document.addEventListener("DOMContentLoaded", () => {
   refreshPath();
   refreshPrompt();
 });
+
+const featureImages = [
+  "assets/slide1.jpg",
+  "assets/slide2.jpg",
+  "assets/slide3.jpg"
+];
+
+let featureIndex = 0;
+
+setInterval(() => {
+  const img = document.getElementById("featuresImg");
+  if (!img) return;
+
+  // اختفاء ناعم
+  img.style.opacity = 0;
+  img.style.transform = "scale(0.97)";
+
+  setTimeout(() => {
+    featureIndex = (featureIndex + 1) % featureImages.length;
+    img.src = featureImages[featureIndex];
+
+    // ظهور ناعم
+    img.style.opacity = 1;
+    img.style.transform = "scale(1)";
+  }, 300);
+}, 3000); // كل 3 ثواني
+

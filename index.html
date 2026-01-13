@@ -41,6 +41,7 @@
 
   <!-- HERO -->
   <header class="hero" id="hero">
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
     <div class="container hero-grid">
       <div class="hero-text reveal">
         <div class="badge" data-i18n="hero_badge">Practical learning • Real projects</div>
@@ -118,66 +119,195 @@
     </div>
   </header>
 
-  <!-- TRUSTED BY / LOGO MARQUEE -->
-  <section class="logos">
-    <div class="container">
-      <p class="tiny muted logos-title" data-i18n="trusted_title">Trusted by builders using</p>
+ <!-- TRUSTED BY / LOGO MARQUEE -->
+<section class="logos">
+  <div class="container">
+    <p class="tiny muted logos-title" data-i18n="trusted_title">Trusted by builders using</p>
 
-      <div class="logo-marquee" aria-label="Partner logos">
-        <div class="logo-track">
-          <!-- set 1 -->
-          <div class="logo-pill">ChatGPT</div>
-          <div class="logo-pill">DeepSeek</div>
-          <div class="logo-pill">Microsoft</div>
-          <div class="logo-pill">Google</div>
-          <div class="logo-pill">Hugging Face</div>
-          <div class="logo-pill">OpenAI</div>
-          <div class="logo-pill">Azure</div>
-          <div class="logo-pill">AWS</div>
+    <div class="logo-marquee" aria-label="Partner logos">
+      <div class="logo-track">
 
-          <!-- set 2 (duplicate for seamless loop) -->
-          <div class="logo-pill">ChatGPT</div>
-          <div class="logo-pill">DeepSeek</div>
-          <div class="logo-pill">Microsoft</div>
-          <div class="logo-pill">Google</div>
-          <div class="logo-pill">Hugging Face</div>
-          <div class="logo-pill">OpenAI</div>
-          <div class="logo-pill">Azure</div>
-          <div class="logo-pill">AWS</div>
+        <!-- set 1 -->
+        <div class="logo-pill">
+          <span class="logo-ic" aria-hidden="true">
+            <!-- ChatGPT (AI swirl-ish) -->
+            <svg viewBox="0 0 24 24" class="logo-svg">
+              <path d="M12 3.2a4.7 4.7 0 0 1 4.6 3.7 4.6 4.6 0 0 1 3.2 6.9 4.6 4.6 0 0 1-5 6.7 4.7 4.7 0 0 1-8.8-1.7 4.6 4.6 0 0 1-1.2-7.8A4.7 4.7 0 0 1 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M8.2 9.6c1.2-1.7 3.8-2.2 5.6-1.1 1.3.7 2 2.1 1.9 3.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M15.8 14.4c-1.2 1.7-3.8 2.2-5.6 1.1-1.3-.7-2-2.1-1.9-3.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="logo-txt">ChatGPT</span>
         </div>
+
+        <div class="logo-pill">
+          <span class="logo-ic" aria-hidden="true">
+            <!-- DeepSeek (magnifier + spark) -->
+            <svg viewBox="0 0 24 24" class="logo-svg">
+              <circle cx="11" cy="11" r="6.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M16 16l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M10.8 7.8l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7.7-1.6Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="logo-txt">DeepSeek</span>
+        </div>
+
+        <div class="logo-pill">
+          <span class="logo-ic" aria-hidden="true">
+            <!-- Microsoft (4 tiles) -->
+            <svg viewBox="0 0 24 24" class="logo-svg">
+              <path d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="logo-txt">Microsoft</span>
+        </div>
+
+        <div class="logo-pill">
+          <span class="logo-ic" aria-hidden="true">
+            <!-- Google (G style ring) -->
+            <svg viewBox="0 0 24 24" class="logo-svg">
+              <path d="M21 12.2c0 4.9-3.4 8.6-9 8.6a9 9 0 1 1 0-18c2.5 0 4.6.9 6.2 2.4l-2.4 2.3A5.8 5.8 0 0 0 12 6.2a5.8 5.8 0 1 0 0 11.6c3.4 0 4.7-1.9 4.9-3.7H12v-3.1h9c.1.5.0.9.0 1.2Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="logo-txt">Google</span>
+        </div>
+
+        <div class="logo-pill">
+          <span class="logo-ic" aria-hidden="true">
+            <!-- Hugging Face (face) -->
+            <svg viewBox="0 0 24 24" class="logo-svg">
+              <circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="9" cy="11" r="1" fill="currentColor"/>
+              <circle cx="15" cy="11" r="1" fill="currentColor"/>
+              <path d="M8.5 14.2c1.2 1.6 2.6 2.4 3.5 2.4s2.3-.8 3.5-2.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M6.3 9.4c-.6-1.2-.5-2.4.4-3.3M17.7 9.4c.6-1.2.5-2.4-.4-3.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="logo-txt">Hugging Face</span>
+        </div>
+
+        <div class="logo-pill">
+          <span class="logo-ic" aria-hidden="true">
+            <!-- OpenAI (hex flower) -->
+            <svg viewBox="0 0 24 24" class="logo-svg">
+              <path d="M12 3.5l3 1.7 3 5.2-3 5.2-3 1.7-3-1.7-3-5.2 3-5.2 3-1.7Z"
+                    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M12 6.6l2 1.1 2 3.4-2 3.4-2 1.1-2-1.1-2-3.4 2-3.4 2-1.1Z"
+                    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="logo-txt">OpenAI</span>
+        </div>
+
+        <div class="logo-pill">
+          <span class="logo-ic" aria-hidden="true">
+            <!-- Azure (A / mountain) -->
+            <svg viewBox="0 0 24 24" class="logo-svg">
+              <path d="M12.2 3.5 3.8 20.5h6.2l2-4.3h6.2l2.1 4.3H21L12.2 3.5Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="logo-txt">Azure</span>
+        </div>
+
+        <div class="logo-pill">
+          <span class="logo-ic" aria-hidden="true">
+            <!-- AWS (smile arrow) -->
+            <svg viewBox="0 0 24 24" class="logo-svg">
+              <path d="M5 9.2c0-2.3 2.2-4 7-4s7 1.7 7 4-2.2 4-7 4-7-1.7-7-4Z"
+                    fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M6.5 16.8c3.2 2.4 7.8 2.4 11 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M17.2 16.7l.4 2.2-2.1-.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="logo-txt">AWS</span>
+        </div>
+
+        <!-- set 2 duplicate -->
+        <div class="logo-pill"><span class="logo-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="logo-svg">
+            <path d="M12 3.2a4.7 4.7 0 0 1 4.6 3.7 4.6 4.6 0 0 1 3.2 6.9 4.6 4.6 0 0 1-5 6.7 4.7 4.7 0 0 1-8.8-1.7 4.6 4.6 0 0 1-1.2-7.8A4.7 4.7 0 0 1 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M8.2 9.6c1.2-1.7 3.8-2.2 5.6-1.1 1.3.7 2 2.1 1.9 3.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M15.8 14.4c-1.2 1.7-3.8 2.2-5.6 1.1-1.3-.7-2-2.1-1.9-3.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </span><span class="logo-txt">ChatGPT</span></div>
+
+        <div class="logo-pill"><span class="logo-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="logo-svg">
+            <circle cx="11" cy="11" r="6.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M16 16l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M10.8 7.8l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7.7-1.6Z" fill="currentColor"/>
+          </svg>
+        </span><span class="logo-txt">DeepSeek</span></div>
+
+        <div class="logo-pill"><span class="logo-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="logo-svg">
+            <path d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z" fill="currentColor"/>
+          </svg>
+        </span><span class="logo-txt">Microsoft</span></div>
+
+        <div class="logo-pill"><span class="logo-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="logo-svg">
+            <path d="M21 12.2c0 4.9-3.4 8.6-9 8.6a9 9 0 1 1 0-18c2.5 0 4.6.9 6.2 2.4l-2.4 2.3A5.8 5.8 0 0 0 12 6.2a5.8 5.8 0 1 0 0 11.6c3.4 0 4.7-1.9 4.9-3.7H12v-3.1h9c.1.5.0.9.0 1.2Z" fill="currentColor"/>
+          </svg>
+        </span><span class="logo-txt">Google</span></div>
+
+        <div class="logo-pill"><span class="logo-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="logo-svg">
+            <circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="9" cy="11" r="1" fill="currentColor"/>
+            <circle cx="15" cy="11" r="1" fill="currentColor"/>
+            <path d="M8.5 14.2c1.2 1.6 2.6 2.4 3.5 2.4s2.3-.8 3.5-2.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M6.3 9.4c-.6-1.2-.5-2.4.4-3.3M17.7 9.4c.6-1.2.5-2.4-.4-3.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span><span class="logo-txt">Hugging Face</span></div>
+
+        <div class="logo-pill"><span class="logo-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="logo-svg">
+            <path d="M12 3.5l3 1.7 3 5.2-3 5.2-3 1.7-3-1.7-3-5.2 3-5.2 3-1.7Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M12 6.6l2 1.1 2 3.4-2 3.4-2 1.1-2-1.1-2-3.4 2-3.4 2-1.1Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </span><span class="logo-txt">OpenAI</span></div>
+
+        <div class="logo-pill"><span class="logo-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="logo-svg">
+            <path d="M12.2 3.5 3.8 20.5h6.2l2-4.3h6.2l2.1 4.3H21L12.2 3.5Z" fill="currentColor"/>
+          </svg>
+        </span><span class="logo-txt">Azure</span></div>
+
+        <div class="logo-pill"><span class="logo-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="logo-svg">
+            <path d="M5 9.2c0-2.3 2.2-4 7-4s7 1.7 7 4-2.2 4-7 4-7-1.7-7-4Z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M6.5 16.8c3.2 2.4 7.8 2.4 11 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M17.2 16.7l.4 2.2-2.1-.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span><span class="logo-txt">AWS</span></div>
+
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- FEATURES -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title reveal" data-i18n="features_title">Why PracticalAI?</h2>
-      <p class="section-sub reveal muted" data-i18n="features_sub">
-        Simple steps, clear outcomes, and minimal confusion.
-      </p>
+<section class="section">
+  <div class="container">
+    <h2 class="section-title reveal" data-i18n="features_title">
+      Why PracticalAI?
+    </h2>
 
-      <div class="feature-grid">
-        <div class="feature reveal">
-          <div class="icon">⚡</div>
-          <h3 data-i18n="f1_title">Fast to start</h3>
-          <p class="muted" data-i18n="f1_sub">Short lessons + guided templates.</p>
-        </div>
+    <!-- صورة واحدة بس -->
+    <img
+      id="featuresImg"
+      src="assets/slide1.jpg"
+      class="ai-showcase-img"
+      alt="AI Image"
+    >
 
-        <div class="feature reveal">
-          <div class="icon">🧭</div>
-          <h3 data-i18n="f2_title">Clear path</h3>
-          <p class="muted" data-i18n="f2_sub">You always know the next step.</p>
-        </div>
-
-        <div class="feature reveal">
-          <div class="icon">🧩</div>
-          <h3 data-i18n="f3_title">Real projects</h3>
-          <p class="muted" data-i18n="f3_sub">Build something you can show.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- <p class="section-sub reveal muted" data-i18n="features_sub">
+      Simple steps, clear outcomes, and minimal confusion.
+    </p> -->
+  </div>
+</section>
 
   <!-- INTERACTIVE PATH BUILDER -->
   <section class="section alt" id="interactive">
