@@ -108,7 +108,10 @@ const dictionary = {
     reg_name: "Name",
     reg_email: "Email",
     reg_goal: "Goal",
-    reg_btn: "Send starter kit",
+
+    // ✅ زر الفورم
+    reg_btn: "SUBMIT",
+
     reg_msg_ok: "✅ Sent! (Demo) We’ll contact you soon.",
     reg_msg_need: "❌ Please enter a valid email.",
 
@@ -223,7 +226,10 @@ const dictionary = {
     reg_name: "الاسم",
     reg_email: "الإيميل",
     reg_goal: "الهدف",
+
+    // ✅ زر الفورم بالعربي (لو عايزه بالإنجليزي حتى في العربي قولّي)
     reg_btn: "إرسال",
+
     reg_msg_ok: "✅ تم الإرسال! (Demo) هنرجعلك قريب.",
     reg_msg_need: "❌ من فضلك اكتب إيميل صحيح.",
 
@@ -561,6 +567,7 @@ function toggleMobileMenu(){
   const isOpen = navGroup.classList.toggle("open");
   btn.setAttribute("aria-expanded", String(isOpen));
 }
+
 // ===================== FEATURES IMAGE SWITCH =====================
 function initFeaturesImageSwitch(){
   const img = document.getElementById("featuresImg");
@@ -574,16 +581,25 @@ function initFeaturesImageSwitch(){
 
   let index = 0;
 
+  // تأكيد أول صورة + ستايل حركة
+  img.src = images[0];
+  img.style.opacity = "1";
+
   setInterval(() => {
     index = (index + 1) % images.length;
 
-    // حركة بسيطة
+    // اختفاء ناعم
     img.style.opacity = "0";
+    img.style.transform = "scale(0.97)";
 
     setTimeout(() => {
       img.src = images[index];
+
+      // ظهور ناعم
       img.style.opacity = "1";
-    }, 300);
+      img.style.transform = "scale(1)";
+    }, 280);
+
   }, 3000);
 }
 
@@ -597,6 +613,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Language
   const savedLang = localStorage.getItem("lang") || "en";
   applyLanguage(savedLang);
+
+  // ✅ Features slider init (مرة واحدة)
+  initFeaturesImageSwitch();
 
   // Mobile menu
   $("menuBtn").addEventListener("click", toggleMobileMenu);
@@ -613,6 +632,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $("nav-cta").addEventListener("click", () => { closeMobileMenu(); scrollToInteractive(); });
   $("hero-cta").addEventListener("click", scrollToInteractive);
   $("hero-card-cta").addEventListener("click", scrollToInteractive);
+
   // Theme toggle
   $("themeToggle").addEventListener("click", () => {
     const current = document.documentElement.getAttribute("data-theme") || "light";
@@ -683,32 +703,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Register (demo)
-  // Register (demo)
-const regForm = $("regForm");
-regForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  document.addEventListener("DOMContentLoaded", () => {
-  // كودك كله زي ما هو
+  // Register (demo) ✅ (بدون DOMContentLoaded جوه)
+  const regForm = $("regForm");
+  if(regForm){
+    regForm.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-  initFeaturesImageSwitch();
-});
+      const email = ($("regEmail").value || "").trim();
+      const msg = $("regMsg");
 
+      const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  const email = ($("regEmail").value || "").trim();
-  const msg = $("regMsg");
-  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+\.[^\s@]+$/.test(email) || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      msg.textContent = ok ? t("reg_msg_ok") : t("reg_msg_need");
 
-  msg.textContent = ok ? t("reg_msg_ok") : t("reg_msg_need");
-
-  // ✅ لو الإيميل صحيح: امسح الحقول بعد ثواني بسيطة
-  if (ok) {
-    setTimeout(() => {
-      regForm.reset();          // يمسح name/email/goal
-      msg.textContent = "";     // يمسح الرسالة
-    }, 1200);
+      if(ok){
+        setTimeout(() => {
+          regForm.reset();
+          msg.textContent = "";
+        }, 1200);
+      }
+    });
   }
-});
 
   // Reveal
   const observer = new IntersectionObserver((entries) => {
@@ -720,30 +735,3 @@ regForm.addEventListener("submit", (e) => {
   refreshPath();
   refreshPrompt();
 });
-
-const featureImages = [
-  "assets/slide1.jpg",
-  "assets/slide2.jpg",
-  "assets/slide3.jpg"
-];
-
-let featureIndex = 0;
-
-setInterval(() => {
-  const img = document.getElementById("featuresImg");
-  if (!img) return;
-
-  // اختفاء ناعم
-  img.style.opacity = 0;
-  img.style.transform = "scale(0.97)";
-
-  setTimeout(() => {
-    featureIndex = (featureIndex + 1) % featureImages.length;
-    img.src = featureImages[featureIndex];
-
-    // ظهور ناعم
-    img.style.opacity = 1;
-    img.style.transform = "scale(1)";
-  }, 300);
-}, 3000); // كل 3 ثواني
-
